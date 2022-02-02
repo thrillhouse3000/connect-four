@@ -1,0 +1,91 @@
+body {
+	background: rgb(95, 95, 255);
+	font-family: 'Press Start 2P', cursive;
+	color: white;
+	text-shadow: 2px 2px 3px black;
+}
+
+h1 {
+	display: block;
+	text-align: center;
+}
+
+#game {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* game board table */
+#board {
+	position: relative;
+	display: block;
+}
+
+#board td {
+	width: 70px;
+	height: 70px;
+	border: solid 1px #666;
+	background: radial-gradient(white 50%, rgb(243, 243, 0), yellow);
+}
+
+/* pieces are div within game table cells: draw as colored circles */
+
+.piece {
+	/* TODO: make into circles */
+	border-radius: 50%;
+	margin: 2.5px;
+	width: 80%;
+	height: 80%;
+	animation: 0.7s drop;
+}
+
+/* TODO: make pieces red/blue,  depending on player 1/2 piece */
+
+.p1 {
+	background-color: red;
+	border: thick rgb(150, 0, 0) double;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: rgb(150, 0, 0);
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+		sans-serif;
+	font-weight: bolder;
+	font-size: 1.5rem;
+	text-shadow: 1px 1px 2px black;
+}
+
+.p2 {
+	background-color: black;
+	border: thick rgb(105, 104, 104) double;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: rgb(105, 104, 104);
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+		sans-serif;
+	font-weight: bolder;
+	font-size: 1.5rem;
+	text-shadow: 1px 1px 2px rgb(201, 201, 201);
+}
+
+/* column-top is table row of clickable areas for each column */
+#column-top td {
+	background: transparent;
+	border: dashed 1px lightgray;
+	font-size: 0px;
+}
+
+#column-top td:hover {
+	background-color: gold;
+}
+
+@keyframes drop {
+	from {
+		transform: translateY(-350px);
+	}
+	to {
+		transform: translateY(0%);
+	}
+}
